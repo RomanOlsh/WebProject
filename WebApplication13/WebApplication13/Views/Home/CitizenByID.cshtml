@@ -1,0 +1,43 @@
+﻿@model WebApplication13.Models.ViewModels.Citizen
+
+    @{
+        ViewBag.Title = "CitizenByID";
+    }
+
+    <h2>Citizen Details</h2>
+
+    <p>
+        @ViewBag.msg
+    </p>
+
+
+    <ul>
+            <li>
+                Last Name : @Html.DisplayFor(model => model.lname)
+            </li>
+            <li>
+                First Name : @Html.DisplayFor(model => model.fname)
+            </li>
+
+            <li>
+                E-Mail : @Html.DisplayFor(model => model.email)
+            </li>
+            <li>
+                Phone Number : @Html.DisplayFor(model => model.phone)
+            </li>
+            <li>
+                Height : @Html.DisplayFor(model => model.height)
+            </li>
+            <li>
+                Number Of Childs : @Html.DisplayFor(model => model.numchild)
+            </li>
+            <li>
+                ID : @Html.DisplayFor(model => model.tz)
+            </li>
+            <li>
+                Password : @Html.DisplayFor(model => model.pwd)
+            </li>
+</ul>
+
+    <a href="/Home/">Back To Main Page</a>
+

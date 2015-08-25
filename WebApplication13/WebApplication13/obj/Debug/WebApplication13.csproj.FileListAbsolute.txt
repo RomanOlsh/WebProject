@@ -48,6 +48,6 @@ C:\Users\rolshanskiy\Documents\GitHub\WebProject\WebApplication13\WebApplication
 C:\Users\rolshanskiy\Documents\GitHub\WebProject\WebApplication13\WebApplication13\bin\System.Web.Webpages.Razor.xml
 C:\Users\rolshanskiy\Documents\GitHub\WebProject\WebApplication13\WebApplication13\bin\System.Web.Helpers.xml
 C:\Users\rolshanskiy\Documents\GitHub\WebProject\WebApplication13\WebApplication13\bin\System.Web.Mvc.xml
-C:\Users\rolshanskiy\Documents\GitHub\WebProject\WebApplication13\WebApplication13\obj\Debug\WebApplication13.csprojResolveAssemblyReference.cache
 C:\Users\rolshanskiy\Documents\GitHub\WebProject\WebApplication13\WebApplication13\obj\Debug\WebApplication13.dll
 C:\Users\rolshanskiy\Documents\GitHub\WebProject\WebApplication13\WebApplication13\obj\Debug\WebApplication13.pdb
+C:\Users\rolshanskiy\Documents\GitHub\WebProject\WebApplication13\WebApplication13\obj\Debug\WebApplication13.csprojResolveAssemblyReference.cache

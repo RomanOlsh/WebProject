@@ -109,7 +109,9 @@
     </Compile>
     <Compile Include="Models\DataModels\Citizens.cs" />
     <Compile Include="Models\DataModels\DataGlobals.cs" />
+    <Compile Include="Models\DataModels\FileManipulations.cs" />
     <Compile Include="Models\ViewModels\Citizen.cs" />
+    <Compile Include="Models\ViewModels\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -123,6 +125,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\CitizenByID.cshtml" />
     <Content Include="Views\Home\UpdateCitizen.cshtml" />
+    <Content Include="Views\Home\AddUser.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -132,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Uploads\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,76 +1,78 @@
-﻿@model IEnumerable<WebApplication13.Models.ViewModels.Citizen>
-
+﻿
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Citizens</h2>
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
-<script>
-    function getconfirmid(tznum) {
-        return confirm('Are you sure to delete this ID: ' + tznum + ' permanently!!!');
+<style>
+     
+    .custom-title h3 {
+      margin: 90px auto;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
-    function myalert(msg) {
-        $(document).ready(function () {
-            alert(msg);
-        });
+
+     .custom-title h1{
+      font-size:65px;
+      margin: 90px auto;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
-</script>
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<script> @Html.Raw(ViewBag.scrptstr) </script>
-<table class="table">
-    
-    <tr>
 
-        <th>
-            @Html.DisplayNameFor(model => model.lname)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.fname)
-        </th>
 
-        <th>
-            @Html.DisplayNameFor(model => model.email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.phone)
-        </th>
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
 
-        <th>Actions</th>
-    </tr>
-    @if (Model != null)
-    {
-        foreach (var item in Model)
-        {
-            <tr>
+    .me {
+        width: 400px;
+        margin: 90px auto;
+    }
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.lname)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.fname)
-                </td>
-
-                <td>
-                    @*@Html.DisplayFor(modelItem => item.email)*@
-                    @Html.FormatValue(item.email,"{0}")
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.phone)
-                </td>
-
-                <td>
-                    @Html.ActionLink("Edit", "UpdateCitizen", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "CitizenByID", new { tz = item.tz }) |
-                    @Html.ActionLink("Delete", "Delete", new { tz = item.tz }, new { onclick = "return getconfirmid("+item.tz+");" })
-                </td>
-            </tr>
+        .me p,
+        .me h1 {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-align: center;
         }
+
+        .me p {
+            font-weight: 200;
+        }
+
+        .me span {
+            font-weight: bold;
+        }
+
+    body {
+        background: #25343F;
+        color: #fff;
+        font-family: 'Raleway', sans-serif;
     }
-    else
-    {
-        <tr><td colspan="5"> No data arrived </td></tr>
-    }
-</table>
+
+    </style>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,200' rel='stylesheet' type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="custom-title">
+    <h1> Welcome To Final Project</h1>
+    <h3>@Html.ActionLink("ENTER", "LoginPage")</h3>
+</div >
+
+
+<br></br>
+<br></br>
+    <div class="me">
+        <p> Created by: <p>
+            <h1> Daria Ermakova </h1>
+        <p>
+            for <span> Websites Management</span>
+        </p>
+    </div>
+
+    <div class="me">
+        <hr />
+        <p>Course Number: 35-866-01</p>
+        <p>Study Year: תשע"ה</p>
+    </div>

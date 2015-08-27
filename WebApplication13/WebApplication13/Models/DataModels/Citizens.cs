@@ -10,7 +10,7 @@ namespace WebApplication13.Models.DataModels
     public class Citizens
     {
         // Method executes SELECT procedure:
-        public static Citizen getCtznbytz(string tz)
+      /*  public static Citizen getCtznbytz(string tz)
         {
             Citizen result = null;
             SqlConnection cnctn = null;
@@ -255,6 +255,6 @@ namespace WebApplication13.Models.DataModels
                     cnctn.Close();
             }
             return rslt;
-        }
+        }*/
     }
 }

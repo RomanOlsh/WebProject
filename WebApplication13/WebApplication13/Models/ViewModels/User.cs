@@ -31,6 +31,8 @@ namespace WebApplication13.Models.ViewModels
         [StringLength(6, MinimumLength = 6, ErrorMessage = "{0} חייב להיות באורך  {2} תוים")]
         public string Capthca { get; set; }
 
-        public HttpPostedFileBase ProfileImage { get; set; }
+        public string imageFileName{ get; set; }
+
+        public int userId { get; set; }
     }
 }

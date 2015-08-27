@@ -15,7 +15,7 @@ namespace WebApplication13.Controllers
 {
     public class HomeController : Controller
     {
-        //Captch:
+        //------------------------------------------- CAPTCHA --------------------------------------//
         const int captchlength = 6;
        
         Random t = new Random();
@@ -79,14 +79,8 @@ namespace WebApplication13.Controllers
 
         //------------------------------------------------------------------------------------------//
 
-       
-        //Upload photo:
-        public ActionResult AddUser() 
-        {
-            gnrtword();
-            return View();
-        }
 
+        //-------------------------------------------- UPLOAD --------------------------------------//
         bool itssignatureok(HttpPostedFileBase x)
         {
             bool rslt = false;
@@ -140,8 +134,18 @@ namespace WebApplication13.Controllers
         }
        
         //------------------------------------------------------------------------------------------//
+        //Welcome Page:
+        public ActionResult Index() {
+            return View();
+        }
 
-        //Add new user method:
+        //Add User:
+        public ActionResult AddUser()
+        {
+            gnrtword();
+            return View();
+        }
+        
         [HttpPost]
         public ActionResult addNewUser(HttpPostedFileBase loginpicture, User user)
         {
@@ -176,21 +180,93 @@ namespace WebApplication13.Controllers
                 Session["msg"] += prblm.Message;
             }
 
-            return RedirectToAction("Index");
+            //Build logic of entering to home page:
+            return RedirectToAction("HomePage");
         }
 
-        
-        
 
-
-
-        public ActionResult Index()
+        //Login Page(Start Page):
+        public ActionResult LoginPage()
         {
-            ViewBag.scrptstr = TempData["errmessage"];
-            List<Citizen> t = Citizens.getallofthem();
-            return View(t);
+            gnrtword();
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult login(User user)
+        {
+            //Captcha Validation:
+            if (user.Capthca.ToLower() == Session["Crntcapthca"].ToString().ToLower())
+            {
+                ModelState.AddModelError("", "Captcha Validation Failuer");
+                gnrtword();
+                return View();
+            }
+
+
+            //Login Logic:
+
+            return RedirectToAction("HomePage");
+        }
+
+
+        //Edit User Page:
+        public ActionResult EditUser()
+        {
+            ViewBag.EmployeeName = "123";
+            ViewBag.Company = "123";
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult editUser(HttpPostedFileBase loginpicture, User user)
+        {
+
+            //Edit User Logic:
+
+            //Add Picture Logic:
+            Session["msg"] = "";
+            try
+            {
+                if (loginpicture == null) // for non html5 browsers
+                    Session["msg"] = "Login  picture Empty!";
+
+                else if (isvalidfile(loginpicture, "Login picture "))
+
+                    if (FileManipulations.addFile(loginpicture))
+                        Session["msg"] += string.Format("Login picture {0} uploaded Ok!", Path.GetFileName(loginpicture.FileName));
+                    else
+                        Session["msg"] += string.Format("Login picture file: {0} cant be save due File system problem!", Path.GetFileName(loginpicture.FileName));
+            }
+
+            catch (Exception prblm)
+            {
+                Session["msg"] += prblm.Message;
+            }
+
+            //Build logic of entering to home page:
+            return RedirectToAction("HomePage");
         }
         
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*
         public ActionResult Delete(string tz)
         {
             if (!Citizens.dltbytz(tz))
@@ -293,6 +369,6 @@ namespace WebApplication13.Controllers
             return View();
         }
 
-
+        */
     }
 }

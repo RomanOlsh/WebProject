@@ -103,13 +103,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ArtictlesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\DataModels\Citizens.cs" />
+    <Compile Include="Models\DataModels\ArticlesManipulations.cs" />
     <Compile Include="Models\DataModels\DataGlobals.cs" />
     <Compile Include="Models\DataModels\FileManipulations.cs" />
+    <Compile Include="Models\DataModels\UserManipulations.cs" />
     <Compile Include="Models\ViewModels\Article.cs" />
     <Compile Include="Models\ViewModels\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -117,16 +119,16 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="Views\Home\Search.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Create.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\LoginPage.cshtml" />
-    <Content Include="Views\Home\CitizenByID.cshtml" />
     <Content Include="Views\Home\EditUser.cshtml" />
     <Content Include="Views\Home\AddUser.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Artictles\MyArticles.cshtml" />
+    <Content Include="Views\Artictles\HomePage.cshtml" />
+    <Content Include="Views\Artictles\AllPublicArticles.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

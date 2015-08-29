@@ -12,7 +12,7 @@ namespace WebApplication13.Models.ViewModels
     {
         [DisplayName("Real Name")]
         [Required(ErrorMessage = "{0} הוא שדה חובה")]
-        [StringLength(16, MinimumLength = 3, ErrorMessage = " {0} תקיו רק בין {2} ל {1} תוים")]
+        [StringLength(60, MinimumLength = 3, ErrorMessage = " {0} תקיו רק בין {2} ל {1} תוים")]
         public string realname { get; set; }
 
         [DisplayName("Password")]

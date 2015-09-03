@@ -1,0 +1,45 @@
+﻿@model IEnumerable<mySite.Models.ViewModels.Article>
+
+@{
+    ViewBag.Title = "MyArticles";
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.articleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isPublic)
+        </th>
+        <th></th>
+    </tr>
+
+    @if (null != Model)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.articleName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.isPublic)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.articleId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.articleId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.articleId })
+                </td>
+            </tr>
+        }
+    }
+
+</table>

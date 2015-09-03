@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h1>Home Page</h1>
+
+
+<h2>All Public Articles</h2>
+ <div id="allPublicArticles">
+ @Html.Partial("~/Views/myprtctd/AllPublicArticles.cshtml", (IEnumerable<mySite.Models.ViewModels.Article>)@ViewBag.AllPublicArticles)
+</div>
+
+<br>
+<br /> 
+<br>
+<br /> 
+<h2>My Articles</h2>
+<div id="myArticles">
+    @Html.Partial("~/Views/myprtctd/MyArticles.cshtml", (IEnumerable<mySite.Models.ViewModels.Article>)@ViewBag.MyArticles)
+</div>

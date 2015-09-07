@@ -1,73 +1,43 @@
-﻿@model mySite.Models.User
+﻿@model mySite.Models.user
 
 @{
     ViewBag.Title = "Login";
 }
 
-@using System.IO;
+<h2>Login</h2>
 
-<h2>
-    Login Page
-</h2>
-
-@using (Html.BeginForm())
-{
+@using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
 
-    <div class="form-horizontal">
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <fieldset style="margin-left:auto; margin-right:auto;width:500px; background-color:antiquewhite">
+        <legend>user</legend>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
-            </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.userLogin)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.userLogin)
+            @Html.ValidationMessageFor(model => model.userLogin)
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
-            </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.userPassword)
+        </div>
+        <div class="editor-field">
+            @Html.PasswordFor(model => model.userPassword)
+            @Html.ValidationMessageFor(model => model.userPassword)
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Capthca, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Capthca, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Capthca, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="col-md-10" style="left:230px;">
-            <img id="tmona" src='@Url.Action("gnrtcaptcha")' alt="the capcha picture" />
-        </div>
-        <br></br>
-        <br></br>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="SIGN IN" class="btn btn-default" formaction="/Default/login" formmethod="post" formenctype="multipart/form-data" />
-            </div>
-        </div>
-
-    </div>
-
-    <br />
-    <div class="form-group">
-        <label class="control-label col-md-2">Not Registered Yet</label>
-        <div class="col-md-10">
-            @Html.ActionLink("SIGN UP", "AddUser")
-        </div>
-    </div>
-    <br />
+        
+        <p>
+            <input type="submit" value="logmein" />&nbsp;<input type="Reset" value="reset" />
+        </p>
+    </fieldset>
 }
 
+@Html.ActionLink("Join my site", "adduser")
 
-
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

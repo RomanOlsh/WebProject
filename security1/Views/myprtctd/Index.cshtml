@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+
+<h1>Home Page</h1>
+
+<div class="form-group">
+    <label class="control-label col-md-2">Search For Articles: </label>
+    <div class="col-md-10">
+        @Html.ActionLink("Search", "Search")
+    </div>
+</div>
+
+<br>
+<br />
+<div class="form-group">
+    <label class="control-label col-md-2">Add New Article: </label>
+    <div class="col-md-10">
+        @Html.ActionLink("Add", "AddArticle")
+    </div>
+</div>
+
+<br>
+<br />
+<h2>All Public Articles</h2>
+ <div id="allPublicArticles">
+ @Html.Partial("~/Views/myprtctd/AllPublicArticles.cshtml", (IEnumerable<mySite.Models.ViewModels.Article>)@ViewBag.AllPublicArticles)
+</div>
+ 
+<br>
+<br /> 
+<h2>My Articles</h2>
+<div id="myArticles">
+    @Html.Partial("~/Views/myprtctd/MyArticles.cshtml", (IEnumerable<mySite.Models.ViewModels.Article>)@ViewBag.MyArticles)
+</div>
+
+
+<script src="~/Scripts/myScript.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

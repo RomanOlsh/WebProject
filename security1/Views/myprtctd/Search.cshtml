@@ -1,0 +1,66 @@
+﻿@model IEnumerable<mySite.Models.ViewModels.Article>
+
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+
+<h2>Search For All Public Articles</h2>
+
+@using (Html.BeginForm())
+{
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="text" name="searchCriteria" style='width:100%;margin:-3px;border:2px inset #eee' />
+        <input type="submit" value="SEARCH" class="btn btn-default"/>
+    </div>
+</div>
+}
+
+<br></br>
+<br></br>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.articleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isPublic)
+        </th>
+        <th></th>
+    </tr>
+
+    @if (null != Model)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.articleName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.isPublic)
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+
+<div>
+    @Html.ActionLink("Back", "Index")
+</div>
+
+
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

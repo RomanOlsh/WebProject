@@ -131,12 +131,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\DataModels\ArticlesManipulations.cs" />
-    <Compile Include="Models\DataModels\DataGlobals.cs" />
-    <Compile Include="Models\DataModels\FileManipulations.cs" />
-    <Compile Include="Models\DataModels\UserManipulations.cs" />
-    <Compile Include="Models\ViewModels\User.cs" />
-    <Compile Include="Models\ViewModels\Article.cs" />
+    <Compile Include="Models\user.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -229,12 +224,9 @@
     <Content Include="Views\myprtctd\Index.cshtml" />
     <Content Include="Views\Default\Login.cshtml" />
     <Content Include="Views\Default\adduser.cshtml" />
-    <Content Include="Views\myprtctd\AllPublicArticles.cshtml" />
-    <Content Include="Views\myprtctd\MyArticles.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

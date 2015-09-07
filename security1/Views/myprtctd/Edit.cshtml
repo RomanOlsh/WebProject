@@ -1,0 +1,50 @@
+﻿@model mySite.Models.ViewModels.Article
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+
+<h2>Edit Article</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <p>
+            @Html.LabelFor(model => model.articleId, "Article ID")
+            @Html.TextBoxFor(model => model.articleId, new { style = "width:60em", maxlength = "60", size = "60", @readonly = "readonly" })
+        </p>
+        <p>
+            @Html.LabelFor(model => model.articleName, "Title")
+            @Html.TextBoxFor(model => model.articleName, new { style = "width:60em", maxlength = "60", size = "60" })
+            @Html.ValidationMessageFor(model => model.articleName)
+        </p>
+        <p>
+           @Html.LabelFor(model => model.isPublic, "Is Public")
+           @Html.CheckBox("isPublic", true)
+        </p>
+        <p>
+            @Html.LabelFor(model => model.articleContent, "Content")
+            @Html.TextAreaFor(model => model.articleContent, new { rows = "10", cols = "80" })
+            @Html.ValidationMessageFor(model => model.articleContent)
+        </p>
+
+        <p>
+            <input type="submit" value="Save" /><br />
+        </p>
+}
+
+
+<script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+<script>
+    tinymce.init({
+        selector: '#articleContent', width: '80em', directionality: 'rtl', statusbar: false, menubar: false, plugins: "textcolor emoticons charmap table link image", toolbar: "emoticons charmap | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | fontselect fontsizeselect | cut copy paste | bullist numlist | outdent indent blockquote | undo redo | removeformat | subscript superscript | link image | forecolor backcolor"
+
+    });
+</script>
+
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

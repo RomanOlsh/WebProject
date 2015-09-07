@@ -1,0 +1,43 @@
+﻿@model IEnumerable<mySite.Models.ViewModels.Article>
+
+@{
+    ViewBag.Title = "AllPublicArticles";
+}
+
+<table class="table">
+    <tr>
+        <th>
+           Article ID
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.articleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date)
+        </th>
+        <th></th>
+    </tr>
+
+    @if (null != Model)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.articleId)
+                </td>
+                <td>
+                    @Ajax.ActionLink(item.articleName, "ShowArticle", @item, new AjaxOptions() { HttpMethod = "Post" }, new { @style = "color:black;" })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.date)
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+
+
+
+

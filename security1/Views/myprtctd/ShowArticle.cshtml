@@ -1,0 +1,27 @@
+﻿@model mySite.Models.ViewModels.Article
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+
+
+<h2>Article @Model.articleName</h2>
+
+<br>
+<br />
+<br>
+<br />
+
+<p> 
+    @Html.Raw(Model.articleContent)
+</p>
+
+<br>
+<br />
+<br>
+<br />
+
+<div>
+    @Html.ActionLink("Back", "Index")
+</div>
